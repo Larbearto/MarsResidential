@@ -1,13 +1,76 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  "[type='text']",
+  "[type='email']",
+  "[type='url']",
+  "[type='password']",
+  "[type='number']",
+  "[type='date']",
+  "[type='datetime-local']",
+  "[type='month']",
+  "[type='search']",
+  "[type='tel']",
+  "[type='time']",
+  "[type='week']",
+  '[multiple]',
+  'textarea',
+  'select' {
+    @apply w-full border border-gray-400 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500;
+  }
+  [type='checkbox'],
+  [type='radio'] {
+    @apply rounded border-gray-400 text-indigo-600 focus:ring-indigo-500;
+  }
+  [type='password'],
+  [type='email'],
+  [type='name'] {
+    @apply pl-9 w-full border border-gray-400 px-3 py-2 rounded-lg shadow-sm text-black focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500;
+  }
+
+  [type='submit'] {
+    @apply w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.showPassword {
+  cursor: pointer;
+  position: absolute;
+  top: -15%;
+  right: 1%;
+  padding: 1rem;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
